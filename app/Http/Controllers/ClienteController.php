@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClienteRequest;
 use App\Http\Requests\UpdateClienteRequest;
 use App\Models\Cliente;
+use Illuminate\Support\Facades\Redirect;
 
 
 class ClienteController extends Controller
@@ -16,8 +17,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        $clientes = Cliente::all();
-        return view('usuarios.list',['clientes' => $clientes]);
+        $listaCliente = Cliente::all();
+        return view('usuarios.list', compact('listaCliente'));
     }
 
     /**
@@ -38,7 +39,9 @@ class ClienteController extends Controller
      */
     public function store(StoreClienteRequest $request)
     {
-        //
+        $cliente = new Cliente;
+        $cliente = $cliente->create($request->all() );
+        return redirect()->route('cliente.index');
     }
 
     /**
@@ -49,7 +52,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        return view('usuarios.list', compact('cliente'));
     }
 
     /**
@@ -60,7 +63,7 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        //
+        return view('usuarios.editar');
     }
 
     /**
@@ -83,6 +86,8 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        $cliente->delete();
+        return redirect()->route('cliente.index');
+
     }
 }

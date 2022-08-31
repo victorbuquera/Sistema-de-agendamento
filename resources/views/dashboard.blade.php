@@ -12,10 +12,10 @@
                     <h1 class="text-3xl">Conectado</h1>
                         <div class="text-center justify-center pt-8">
                             <a type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                               href="{{route('clientes')}}">Lista de clientes
+                               href="{{route('cliente.index')}}">Lista de clientes
                             </a>
                             <a type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                                href="{{route('cadastrar')}}">Cadastrar
+                                href="{{route('cliente.create')}}">Cadastrar
                             </a>
                         </div>
                     </div>
