@@ -22,9 +22,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-route::get('/aula',function (){
-    return view('aula');
-});
 
 Route::resource('cliente', ClienteController::class);
 

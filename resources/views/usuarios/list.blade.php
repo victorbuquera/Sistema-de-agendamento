@@ -10,20 +10,20 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h1 class="text-center font-semibold text-3xl">Clientes cadastrados</h1>
-                    <div class=>
-                        <table class="table table-bordered">
+                    <div class="">
+                        <table class="table-fixed">
                             <thead>
                             <tr>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Opções</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Opções</th>
                             </tr>
                             </thead>
                             <tbody>
                         @foreach($listaCliente as $u)
                             <tr>
-                                <td>{{$u->nome}}</td>
-                                <td>{{$u->email}}</td>
+                                <td style="text-align: center">{{$u->nome}}</td>
+                                <td style="text-align: center">{{$u->email}}</td>
                                 <td><a href="{{route('cliente.update',$u)}}">Editar</a>
                                     <form action="{{ route('cliente.destroy',$u) }}" method="POST">
 
